@@ -4,12 +4,13 @@ import { useRouter } from 'next/router';
 
 export default function Home({ results }) {
   const router = useRouter();
-  const movieClick = (id, title) => {
+  const movieClick = (id, title, poster) => {
     router.push(
       {
         pathname: `movies/${id}`,
         query: {
           title,
+          poster,
         },
       },
       `movies/${id}`,
@@ -23,7 +24,7 @@ export default function Home({ results }) {
         <div
           key={movie.id}
           onClick={() => {
-            movieClick(movie.id, movie.original_title);
+            movieClick(movie.id, movie.original_title, movie.poster_path);
           }}
           className="movie"
         >

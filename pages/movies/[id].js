@@ -6,6 +6,7 @@ export default function Detail() {
   return (
     <>
       <h4>{router.query.title || 'Loading...'}</h4>
+      <img src={`https://image.tmdb.org/t/p/w500${router.query.poster}`} />
     </>
   );
 }
