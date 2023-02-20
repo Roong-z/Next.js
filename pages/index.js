@@ -5,7 +5,15 @@ import { useRouter } from 'next/router';
 export default function Home({ results }) {
   const router = useRouter();
   const movieClick = (id) => {
-    router.push(`movies/${id}`);
+    router.push(
+      {
+        pathname: `movies/${id}`,
+        query: {
+          title: 'Roongz',
+        },
+      },
+      `movies/${id}`,
+    );
   };
   return (
     <div className="container">
