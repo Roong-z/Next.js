@@ -1,3 +1,4 @@
+import '/styles/globals.css';
 import NavBar from '../components/NavBar';
 import Layout from './Layout';
 

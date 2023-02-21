@@ -5,16 +5,7 @@ import { useRouter } from 'next/router';
 export default function Home({ results }) {
   const router = useRouter();
   const movieClick = (id, title, poster) => {
-    router.push(
-      {
-        pathname: `movies/${id}`,
-        query: {
-          title,
-          poster,
-        },
-      },
-      `movies/${id}`,
-    );
+    router.push(`movies/${title}/${id}/${poster}`);
   };
   return (
     <div className="container">
@@ -31,7 +22,6 @@ export default function Home({ results }) {
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           <h4>{movie.original_title}</h4>
         </div>
-        // </Link>
       ))}
       <style jsx>{`
         .container {
